@@ -219,13 +219,11 @@ librdrand_la_CPPFLAGS = $(libsodium_la_CPPFLAGS) \
 librdrand_la_SOURCES = \
 	randombytes/internal/randombytes_internal_random.c
 
-if !EMSCRIPTEN
 libsodium_la_LIBADD += librdrand.la
 noinst_LTLIBRARIES  += librdrand.la
 
 libsodium_la_SOURCES += \
 	randombytes/sysrandom/randombytes_sysrandom.c
-endif
 
 libarmcrypto_la_LDFLAGS = $(libsodium_la_LDFLAGS)
 libarmcrypto_la_CPPFLAGS = $(libsodium_la_CPPFLAGS) \
